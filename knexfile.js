@@ -6,6 +6,7 @@ module.exports = {
     connection: {
       filename: './data/book.db3'
     },
+    debug: true,
     useNullAsDefault: true, // needed for sqlite
     migrations: {
       directory: './data/migrations'
