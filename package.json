@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/gabada/webdb-iv-challenge.git",
-  "author": "Gill Abada <gill@callifi.com>",
+  "author": "Gill Abada <gill.abada@gmail.com>",
+  "scripts": {
+    "server": "nodemon"
+  },
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
