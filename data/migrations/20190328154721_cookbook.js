@@ -48,15 +48,19 @@ exports.up = function(knex, Promise) {
     .createTable('recipe_ingredients', tbl => {
       tbl.increments();
       tbl
-        .string('name', 128)
-        .notNullable()
-        .unique();
-      tbl
         .integer('recipe_id')
         .unsigned()
         .notNullable()
         .references('id')
         .inTable('recipes')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
+      tbl
+        .integer('ingredient_id')
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('ingredients')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
       tbl.decimal('quantity').notNullable();
