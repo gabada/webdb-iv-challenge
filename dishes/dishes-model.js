@@ -10,6 +10,12 @@ function getDishes() {
   return db('dishes');
 }
 
+function findById(id) {
+  return db('dishes')
+    .where({ id })
+    .first();
+}
+
 function addDish(dish) {
   return db('dishes')
     .insert(dish)
