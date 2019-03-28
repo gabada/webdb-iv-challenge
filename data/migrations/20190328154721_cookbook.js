@@ -36,6 +36,14 @@ exports.up = function(knex, Promise) {
         .inTable('dishes')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
+      tbl
+        .integer('recipe_id')
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('recipes')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
     })
     .createTable('recipe_ingredients', tbl => {
       tbl.increments();
